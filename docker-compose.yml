@@ -1,0 +1,51 @@
+version: '3.8'
+
+services:
+  # 1. Redis Broker & Cache
+  redis:
+    image: redis:7-alpine
+    container_name: terracast_redis
+    ports:
+      - "6379:6379"
+    restart: unless-stopped
+    volumes:
+      - redis_data:/data
+
+  # 2. FastAPI Backend Microservice Gateway
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: terracast_backend
+    ports:
+      - "8000:8000"
+    environment:
+      - REDIS_URL=redis://redis:6379/0
+      - CELERY_BROKER_URL=redis://redis:6379/1
+      - CELERY_RESULT_BACKEND=redis://redis:6379/2
+    env_file:
+      - .env.example
+    depends_on:
+      - redis
+    restart: unless-stopped
+
+  # 3. Celery Distributed Task Worker (InSAR, Rainfall & PINN)
+  celery_worker:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: terracast_celery
+    command: celery -A app.tasks.celery_app worker --loglevel=info -c 4
+    environment:
+      - REDIS_URL=redis://redis:6379/0
+      - CELERY_BROKER_URL=redis://redis:6379/1
+      - CELERY_RESULT_BACKEND=redis://redis:6379/2
+    env_file:
+      - .env.example
+    depends_on:
+      - redis
+      - backend
+    restart: unless-stopped
+
+volumes:
+  redis_data:

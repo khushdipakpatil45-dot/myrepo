@@ -1,0 +1,22 @@
+{
+  "name": "TerraCast-NER: Landslide Early Warning",
+  "short_name": "TerraCast",
+  "description": "Physics-Informed Real-Time Landslide Early Warning & Safe Corridor System for North Eastern Region",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#090d16",
+  "theme_color": "#dc2626",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

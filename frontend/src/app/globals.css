@@ -1,0 +1,125 @@
+@import "tailwindcss";
+@import "./theme.css";
+@import "leaflet/dist/leaflet.css";
+
+/* ======================================================================
+   TERRACAST-NER — Global Styles (Meteorological Light Glass Theme)
+   ====================================================================== */
+
+/* ── Base Reset & Background ─────────────────────────────────────────── */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+body {
+  background-color: #eef2fa;
+  background-image: var(--bg-image);
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: var(--textPrimary);
+  font-family: var(--font-sans);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 1.5;
+}
+
+/* Atmospheric Protective Vignette (Crystal Clear Satellite View) */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background: var(--bg-overlay);
+  pointer-events: none;
+}
+
+/* Ensure all content renders above the overlay */
+body > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Typography Enforcement ──────────────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  color: var(--textNavyTitle);
+  letter-spacing: -0.01em;
+}
+
+/* Monospace enforcement for data elements */
+[data-mono],
+code, pre, kbd, samp,
+.font-mono {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+/* ── Scrollbar (clean light glass style) ──────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(219, 230, 247, 0.2);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.5);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 116, 139, 0.7);
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(148, 163, 184, 0.5) transparent;
+}
+
+/* ── Selection ───────────────────────────────────────────────────────── */
+::selection {
+  background: rgba(30, 58, 138, 0.18);
+  color: var(--textNavyTitle);
+}
+
+/* ── Leaflet Light Glass Theme Tweaks ────────────────────────────────── */
+.leaflet-container {
+  background: #e2e8f0 !important;
+  font-family: inherit;
+}
+
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+  background: rgba(255, 255, 255, 0.92) !important;
+  color: var(--textNavyTitle) !important;
+  border: 1px solid var(--borderGlassDefault);
+  box-shadow: var(--shadow-floatingGlass);
+  border-radius: var(--card-radius);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.leaflet-control-zoom a {
+  background: rgba(255, 255, 255, 0.85) !important;
+  color: var(--textNavyTitle) !important;
+  border-color: var(--borderGlassDefault) !important;
+  backdrop-filter: blur(8px);
+}
+
+/* ── Focus Visible ───────────────────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--textBrandBlue);
+  outline-offset: 2px;
+}
+
+button:focus-visible {
+  outline: 2px solid var(--textBrandBlue);
+  outline-offset: 1px;
+}

@@ -1,0 +1,102 @@
+/* ======================================================================
+   TERRACAST-NER — Design Token System (CSS Custom Properties)
+   Meteorological Light Glass Theme
+   ====================================================================== */
+
+:root {
+  /* ── Authoritative Scientific Typography Colors ──────────────────────── */
+  --textNavyTitle: #0f172a;
+  --textPrimary:   #1e293b;
+  --textSecondary: #475569;
+  --textMuted:     #64748b;
+  --textBrandBlue: #1e3a8a;
+
+  /* ── Atmospheric Protective Vignette (Crystal Clear Satellite Image) ─ */
+  --bgBackdropTint:    rgba(240, 245, 255, 0.15);
+  --bgHazyFogOverlay:  rgba(255, 255, 255, 0.10);
+
+  /* ── Floating Glass Surfaces (Translucent / Frosted Glassmorphism) ──── */
+  --glassCardBg:         rgba(255, 255, 255, 0.38);
+  --glassCardBgHover:    rgba(255, 255, 255, 0.52);
+  --glassHeaderBg:       rgba(255, 255, 255, 0.48);
+  --glassTableRowBg:     rgba(255, 255, 255, 0.24);
+  --glassTableRowHover:  rgba(255, 255, 255, 0.45);
+
+  /* ── Translucent Frost Borders & Glass Highlights ──────────────────── */
+  --borderGlassSubtle:  rgba(255, 255, 255, 0.55);
+  --borderGlassDefault: rgba(255, 255, 255, 0.40);
+  --borderGlassStrong:  rgba(255, 255, 255, 0.75);
+
+  /* ── Operational Status Accents ────────────────────────────────────── */
+  --statusNominal:     #059669;
+  --statusNominalBg:   rgba(16, 185, 129, 0.12);
+  --statusWarning:     #d97706;
+  --statusWarningBg:   rgba(245, 158, 11, 0.14);
+  --statusCritical:    #dc2626;
+  --statusCriticalBg:  rgba(239, 68, 68, 0.14);
+  --statusInfo:        #2563eb;
+  --statusInfoBg:      rgba(37, 99, 235, 0.12);
+
+  /* ── Legacy Slate Palette Mappings (Light-Oriented) ─────────────────── */
+  --slate-50:  #0f172a;
+  --slate-100: #1e293b;
+  --slate-200: #334155;
+  --slate-300: #475569;
+  --slate-400: #64748b;
+  --slate-500: #94a3b8;
+  --slate-600: #cbd5e1;
+  --slate-700: #e2e8f0;
+  --slate-800: #f1f5f9;
+  --slate-900: #f8fafc;
+  --slate-950: #ffffff;
+
+  /* ── Accents & Status Tones ─────────────────────────────────────────── */
+  --cyan-400:    #1e3a8a;
+  --cyan-500:    #2563eb;
+  --cyan-700:    #1d4ed8;
+  --emerald-400: #059669;
+  --emerald-700: #047857;
+  --amber-300:   #b45309;
+  --amber-400:   #d97706;
+  --red-400:     #dc2626;
+  --red-700:     #b91c1c;
+  --red-950:     #450a0a;
+  --sky-400:     #2563eb;
+
+  --status-normal:   #059669;
+  --status-advisory: #d97706;
+  --status-warning:  #ea580c;
+  --status-critical: #dc2626;
+
+  /* ── Typography ────────────────────────────────────────────────────── */
+  --font-sans: 'Public Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', 'Fira Code', ui-monospace, monospace;
+
+  /* ── Card & Overlay Tokens ─────────────────────────────────────────── */
+  --card-bg:       var(--glassCardBg);
+  --card-bg-solid: rgba(255, 255, 255, 0.92);
+  --card-border:   var(--borderGlassDefault);
+  --card-blur:     blur(16px);
+  --card-radius:   12px;
+
+  --bg-overlay: linear-gradient(180deg, rgba(15, 23, 42, 0.22) 0%, rgba(15, 23, 42, 0.12) 40%, rgba(15, 23, 42, 0.28) 100%);
+  --bg-image:   url('/bg-satellite.jpg');
+
+  /* ── Shadows (Multi-tier floating depth) ────────────────────────────── */
+  --shadow-floatingGlass: 0 12px 40px 0 rgba(15, 23, 42, 0.18), 0 1px 1px 0 rgba(255, 255, 255, 0.85) inset;
+  --shadow-floatingCard:  0 8px 28px -2px rgba(15, 23, 42, 0.14), 0 0 0 1px rgba(255, 255, 255, 0.75) inset;
+  --shadow-subtle:        0 2px 8px rgba(15, 23, 42, 0.08);
+
+  /* ── Spacing Scale ─────────────────────────────────────────────────── */
+  --sp-1:  4px;
+  --sp-2:  8px;
+  --sp-3:  12px;
+  --sp-4:  16px;
+  --sp-5:  20px;
+  --sp-6:  24px;
+  --sp-8:  32px;
+
+  /* ── Transitions ───────────────────────────────────────────────────── */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration: 160ms;
+}
